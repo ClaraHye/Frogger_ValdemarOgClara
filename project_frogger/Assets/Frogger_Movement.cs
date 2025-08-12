@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Frogger_Movement : MonoBehaviour
 {
-    public int jumpsize; 
+    public int jumpsize;
+    Vector3 startposition;
     void Start()
     {
         this.transform.position = new Vector3(0, 0.5f, 0);
-    }
+        startposition = transform.position;
 
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.W))
@@ -27,6 +29,13 @@ public class Frogger_Movement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             transform.position = new Vector3(transform.position.x - jumpsize, transform.position.y, transform.position.z);
+        }
+    }
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.CompareTag("Water"))
+        {
+            transform.position = startposition;
         }
     }
 }
