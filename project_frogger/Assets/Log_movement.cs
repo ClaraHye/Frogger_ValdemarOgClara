@@ -13,9 +13,9 @@ public class Log_movement : MonoBehaviour
    
     void Start()
     {
-        transform.position = LogStartPosition;
+        transform.localPosition = LogStartPosition;
 
-        transform.DOMove(LogSlutPosition, LogSpeed).SetEase(Ease.Linear);
+        transform.DOLocalMove(LogSlutPosition, LogSpeed).SetEase(Ease.Linear);
 
 
     }

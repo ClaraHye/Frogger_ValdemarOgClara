@@ -33,10 +33,11 @@ public class Frogger_Movement : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.CompareTag("Water"))
+        if (collider.gameObject.CompareTag("Water") || collider.gameObject.CompareTag("Bil"))
         {
             transform.position = startposition;
         }
+        
 
 
     }
