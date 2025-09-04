@@ -5,18 +5,10 @@ using UnityEngine;
 
 public class Log_movement : MonoBehaviour
 {
-    [Header("LogSettings")]
-    public Vector3 LogStartPosition;
-    public Vector3 LogSlutPosition;
-    public float LogSpeed;
-
-   
-    void Start()
+    public void Move(float LogSpeed,Vector3 startpos, Vector3 slutpos)
     {
-        transform.localPosition = LogStartPosition;
-
-        transform.DOLocalMove(LogSlutPosition, LogSpeed).SetEase(Ease.Linear);
-
+        transform.localPosition = startpos;
+        transform.DOLocalMove(slutpos, LogSpeed).SetEase(Ease.Linear);
 
     }
 }
